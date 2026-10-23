@@ -5065,6 +5065,9 @@ func installTargetNames() []string {
 		"trae", "trae-auto",
 		"trae-ide", "trae-ide-auto",
 		"muse", "muse-auto",
+		// MiniMax Code: the MCP entry alone, and the package that adds the
+		// hooks beside it.
+		"mcode", "mcode-auto",
 		"kimi", "kimi-auto",
 		"hermes", "hermes-auto",
 		"pi", "pi-auto",
@@ -5244,6 +5247,10 @@ func existingTargetChecks() map[string]string {
 		"workbuddy":    filepath.Join(sources.WorkBuddyConfigDir(), "projects"),
 		"trae":         filepath.Join(sources.TraeRoot(), "sessions"), // the same: deja creates traecli.toml
 		"muse":         sources.MuseRoot(),                            // the same: deja creates ~/.config/muse
+		// The session store, not the config: deja creates mcp.json and the
+		// plugin package itself, so keying on the config would make every
+		// machine a MiniMax Code machine after one install.
+		"mcode": sources.McodeRoot(),
 		// The IDE's own globalStorage, not User/: deja writes User/mcp.json.
 		"trae-ide": filepath.Join(traeIDEUserDir(), "globalStorage"),
 		// Reasonix's own config.toml, which it writes on first run. deja
