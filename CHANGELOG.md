@@ -50,6 +50,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- `deja sources` names a location for `copilot-chat`, `roo`, `kilocode` and
+  `cherrystudio` on a machine where they are not installed yet. Those rows
+  printed an empty column; each now names the directory deja reads once the
+  editor or app creates it: VS Code's `User` directory, the extension's
+  `globalStorage` directory, and Cherry Studio's default store (#5638).
 - `deja how` and `deja restore` run without an argument print the usage line
   `deja help` prints. Each kept its own copy, and both had drifted: `how`
   left out `--all-projects` and `restore` spelled `-o file` for
