@@ -41,6 +41,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- `deja how` and `deja restore` run without an argument print the usage line
+  `deja help` prints. Each kept its own copy, and both had drifted: `how`
+  left out `--all-projects` and `restore` spelled `-o file` for
+  `-o|--out file`. `deja files`, a third copy, now reads the same entry
+  (#5641).
 - opencode and Kilo keep one per-prompt recall block on a user message. The
   plugins appended on every model call and only checked for their own block at
   the end, so two copies of the plugin, or a host that keeps the message
