@@ -41,6 +41,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- `deja stats --year` says "1 session", "1 turn" and "1 record" on every
+  line, not only the first, and the verbs agree. From @dannyward630 (#5655,
+  #5658).
 - Amp threads the plugin writes are filed under the workspace Amp has open,
   not `amp/plugins`. The plugin took `process.cwd()` for the thread's
   directory, and Amp runs a plugin from `~/.config/amp/plugins`, so every
