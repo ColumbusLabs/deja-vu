@@ -41,6 +41,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- `deja help delete` names the agents it takes instead of describing them: the
+  page closes with the list built from the two maps the command reads, so an
+  agent added to either is named there without a second edit. The refusal for an
+  agent whose sessions deja cannot check yet opens with the agent —
+  `Continue sessions can't be deleted yet: deja has not checked how Continue
+  lists them` — where the CLI's own prefix made it read `deja: deja can't delete
+  Continue sessions yet`. From @tnalbant (#5654, #5675).
 - `deja stats --year` says "1 session", "1 turn" and "1 record" on every
   line, not only the first, and the verbs agree. From @dannyward630 (#5655,
   #5658).
