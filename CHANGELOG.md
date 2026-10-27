@@ -22,6 +22,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Recall labels who wrote each line (`Model said (no record backs it)`,
+  `Prompt written by a parent agent`, `Output with an instruction to agents` …)
+  and shows the command or edit a model's conclusion rests on above the
+  conclusion, from receipts written when the index is built or updated. A check or build
+  rule a person typed in an interactive Claude Code session of the current
+  project is shown as `User said (this project)`, and the frame header and MCP
+  instructions say to follow those lines and nothing else. An instruction to
+  run something that no person in the project typed (tool output, a paste, a
+  parent agent's prompt, a `claude -p` run, another project) is cut to
+  `[instruction to agents left out]`; a rule the person took back is not
+  shown. The index version is now 109, so the store rebuilds once on the
+  first run.
 - Recall no longer heads a page "No session is about this" when a session on
   it holds most of a long query. The page says which session holds how many of
   the query's words and which it lacks. A page that shares only filler words
@@ -55,6 +67,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   printed an empty column; each now names the directory deja reads once the
   editor or app creates it: VS Code's `User` directory, the extension's
   `globalStorage` directory, and Cherry Studio's default store (#5638).
+- Tab completion offers `deja friction --settle` and `--unsettle` in bash, zsh,
+  fish and PowerShell, and completes nothing for the wall id after them.
+  friction shared one case with fix and tests, which offered only `--limit`
+  and `--json` (#5640).
 - `deja how` and `deja restore` run without an argument print the usage line
   `deja help` prints. Each kept its own copy, and both had drifted: `how`
   left out `--all-projects` and `restore` spelled `-o file` for
