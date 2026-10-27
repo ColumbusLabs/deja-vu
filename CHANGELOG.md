@@ -62,6 +62,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Tab completion offers `deja friction --settle` and `--unsettle` in bash, zsh,
+  fish and PowerShell, and completes nothing for the wall id after them.
+  friction shared one case with fix and tests, which offered only `--limit`
+  and `--json` (#5640).
 - `deja how` and `deja restore` run without an argument print the usage line
   `deja help` prints. Each kept its own copy, and both had drifted: `how`
   left out `--all-projects` and `restore` spelled `-o file` for
